@@ -58,3 +58,4 @@ payload:
   - PROCESS-NAME,ktorrent
   - PROCESS-NAME,rtorrent
   - PROCESS-NAME,tribler
+  - PROCESS-NAME,torrserver
