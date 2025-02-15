@@ -108,7 +108,7 @@ reject:domain:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/oisd/n
 </details>
 
 ## re-filter
-include domain & ip list from [re-filter](https://github.com/1andrevich/Re-filter-lists)
+include domain & ip list from [re-filter](https://github.com/1andrevich/Re-filter-lists) & [ech+no-ech list by Akiyamov](https://github.com/Akiyamov/singbox-ech-list) based on re-filter
 <details>
   <summary>how to add</summary>
   
@@ -134,6 +134,33 @@ rule-providers:
 rules:
   - RULE-SET,refilter_domains,PROXY
   - RULE-SET,refilter_ipsum,PROXY
+  - MATCH,DIRECT
+```
+
+</details>
+<details>
+  <summary>.yaml example with ECH+noECH rules</summary>
+  
+```yaml
+rule-providers:
+  refilter_noech:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://github.com/legiz-ru/mihomo-rule-sets/raw/main/re-filter/re-filter-noech.mrs
+    path: ./re-filter/noech.mrs
+    interval: 86400
+  refilter_ech:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://github.com/legiz-ru/mihomo-rule-sets/raw/main/re-filter/re-filter-ech.mrs
+    path: ./re-filter/ech.mrs
+    interval: 86400
+rules:
+  - DOMAIN,cloudflare-ech.com,PROXY
+  - RULE-SET,refilter_ech,DIRECT
+  - RULE-SET,refilter_noech,PROXY
   - MATCH,DIRECT
 ```
 
