@@ -157,10 +157,18 @@ rule-providers:
     url: https://github.com/legiz-ru/mihomo-rule-sets/raw/main/re-filter/re-filter-ech.mrs
     path: ./re-filter/ech.mrs
     interval: 86400
+  refilter_ipsum:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: https://github.com/legiz-ru/mihomo-rule-sets/raw/main/re-filter/ip-rule.mrs
+    path: ./re-filter/ip-rule.mrs
+    interval: 86400
 rules:
   - DOMAIN,cloudflare-ech.com,PROXY
   - RULE-SET,refilter_ech,DIRECT
   - RULE-SET,refilter_noech,PROXY
+  - RULE-SET,refilter_ipsum,PROXY
   - MATCH,DIRECT
 ```
 
