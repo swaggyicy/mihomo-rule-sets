@@ -92,6 +92,7 @@ jobs:
         run: |
          mkdir -p other
          wget -O discord-voice-ip-list.text https://github.com/GhostRooter0953/discord-voice-ips/raw/master/voice_domains/discord-voice-ip-list
+         sed -i 's/$/\/32/' discord-voice-ip-list.text
          mihomo convert-ruleset ipcidr text discord-voice-ip-list.text discord-voice-ip-list.mrs
          wget -O torrent-websites.txt https://github.com/sakib-m/Pi-hole-Torrent-Blocklist/raw/main/all-torrent-websites.txt
          wget -O torrent-trackers.txt https://github.com/sakib-m/Pi-hole-Torrent-Blocklist/raw/main/all-torrent-trackres.txt
