@@ -302,6 +302,36 @@ proxy:domain:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/ru-bund
 
 </details>
 </details>
+<details>
+  <summary>discord-voice-ips</summary>
+  
+<details>
+  <summary>.yaml example for binary rule-set .mrs</summary>
+  
+```yaml
+rule-providers:
+  discord-voice-ips:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: https://github.com/legiz-ru/mihomo-rule-sets/raw/main/other/discord-voice-ip-list.mrs
+    path: ./other/discord-voice-ips.mrs
+    interval: 86400
+rules:
+  - RULE-SET,discord-voice-ips,PROXY
+  - MATCH,DIRECT
+```
+
+</details>
+<details>
+  <summary>add to vpnbot</summary>
+  
+```shell
+proxy:ipcidr:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/other/discord-voice-ip-list.mrs
+```
+
+</details>
+</details>
 
 # another mihomo rulesets
 - [mihomo rule-sets](https://github.com/MetaCubeX/meta-rules-dat/tree/meta) by MetaCubeX include: asn/geoip/geosite
