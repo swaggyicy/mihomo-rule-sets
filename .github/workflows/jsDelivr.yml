@@ -15,7 +15,7 @@ jobs:
       - name: Purge jsDelivr CDN for all files
         run: |
           for file in $(find . -type f | sed 's|^\./||'); do
-            cmd="curl -I \"https://purge.jsdelivr.net/gh/${{ github.repository }}@release/${file}\""
+            cmd="curl -I \"https://purge.jsdelivr.net/gh/${{ github.repository }}@main/${file}\""
             echo "Run cmd: ${cmd}"
             eval ${cmd}
           done
