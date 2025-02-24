@@ -18,6 +18,7 @@
             "domain:googleapis.cn",
             "domain:gstatic.com",
             "domain:cloudflare-dns.com",
+            "domain:cloudflare-ech.com",
             "domain:one.one.one.one"
           ]
         }
@@ -127,6 +128,7 @@
         },
         {
           "domain": [
+            "domain:cloudflare-ech.com",
             "domain:cloudflare-dns.com",
             "domain:one.one.one.one"
           ],

@@ -116,7 +116,7 @@ jobs:
           NO_SKIP: true
         run: |
          cp .github/workflows/v2ray-marzban-base.json other/marzban-v2ray-ru-bundle.json
-         domains=$(jq -R -s 'split("\n") | map(select(length > 0))' ru-bundle.lst) && jq --argjson added "$domains" '(.dns.servers[1].domains |= (if type=="string" then [.] else . end)) | (.dns.servers[1].domains += $added) | (.routing.rules |= map(if .domain then .domain |= (if type=="string" then [.] else . end) else . end)) | (.routing.rules |= map(if (.domain == ["domain:cloudflare-dns.com", "domain:one.one.one.one"]) then .domain += $added else . end))' other/marzban-v2ray-ru-bundle.json > temp.json && mv temp.json other/marzban-v2ray-ru-bundle.json
+         domains=$(jq -R -s 'split("\n") | map(select(length > 0))' ru-bundle.lst) && jq --argjson added "$domains" '(.dns.servers[1].domains |= (if type=="string" then [.] else . end)) | (.dns.servers[1].domains += $added) | (.routing.rules |= map(if .domain then .domain |= (if type=="string" then [.] else . end) else . end)) | (.routing.rules |= map(if (.domain == ["domain:cloudflare-ech.com", "domain:cloudflare-dns.com", "domain:one.one.one.one"]) then .domain += $added else . end))' other/marzban-v2ray-ru-bundle.json > temp.json && mv temp.json other/marzban-v2ray-ru-bundle.json
          
       - name: Delete temp file
         run: |
