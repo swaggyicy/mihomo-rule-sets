@@ -11,7 +11,7 @@
       ]
     },
     "servers": [
-      "1.1.1.1",
+      "localhost",
       {
         "address": "1.1.1.1",
         "domains": [
