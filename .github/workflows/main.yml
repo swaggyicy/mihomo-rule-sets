@@ -111,6 +111,13 @@ jobs:
          domains=$(cat ru-bundle.lst | jq -R . | jq -s .) && jq --argjson domains "$domains" '(.routing.rules | to_entries | .[] | select(.value.outboundTag == "block").key + 1) as $idx | .routing.rules = .routing.rules[0:$idx] + [{"type": "field", "outboundTag": "~outbound~", "domain": $domains}] + .routing.rules[$idx:]' other/vpnbot-v2ray-ru-bundle.json > temp.json && mv temp.json other/vpnbot-v2ray-ru-bundle.json
          jq '.routing.rules as $rules | ($rules | to_entries | map(select(.value.outboundTag == "block" and .value.domain == "~block~")) | .[0].key + 1) as $idx | .routing.rules = $rules[0:$idx] + [{"type": "field", "outboundTag": "block", "domain": ["geosite:category-ads-all"]}] + $rules[$idx:]' other/vpnbot-v2ray-ru-bundle.json > other/vpnbot-v2ray-ru-bundle-category-ads-all.json
 
+      - name: Generate v2ray templates for marzban
+        env:
+          NO_SKIP: true
+        run: |
+         cp .github/workflows/v2ray-marzban-base.json other/marzban-v2ray-ru-bundle.json
+         domains=$(jq -R -s . ru-bundle.lst) && jq --argjson added "$domains" '.dns.servers[1].domains += $added | .routing.rules |= map(if (.domain? and (.domain | length == 2) and (.domain == ["domain:cloudflare-dns.com", "domain:one.one.one.one"])) then .domain += $added else . end)' other/marzban-v2ray-ru-bundle.json > temp.json && mv temp.json other/marzban-v2ray-ru-bundle.json
+
       - name: Delete temp file
         run: |
           rm ru-bundle.lst | rm re-filter-ip.text | rm re-filter-domain.text |  rm re-filter-ech.lst | rm re-filter-noech.lst
