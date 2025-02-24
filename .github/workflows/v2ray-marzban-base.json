@@ -11,7 +11,7 @@
         ]
       },
       "servers": [
-        "localhost",
+        "77.88.8.8",
         {
           "address": "1.1.1.1",
           "domains": [
