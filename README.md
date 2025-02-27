@@ -9,6 +9,16 @@ include: [itdoginfo-inside-russia](https://github.com/itdoginfo/allow-domains/) 
   <summary>.yaml example for binary rule-set .mrs</summary>
   
 ```yaml
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
 rule-providers:
   ru-bundle:
     type: http
@@ -42,6 +52,16 @@ include all list from [oisd](oisd.nl)
   <summary>.yaml example for binary rule-set .mrs</summary>
   
 ```yaml
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
 rule-providers:
   oisd_big:
     type: http
@@ -116,6 +136,16 @@ include domain & ip list from [re-filter](https://github.com/1andrevich/Re-filte
   <summary>.yaml example for binary rule-set .mrs</summary>
   
 ```yaml
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
 rule-providers:
   refilter_domains:
     type: http
@@ -142,6 +172,16 @@ rules:
   <summary>.yaml example with ECH+noECH rules</summary>
   
 ```yaml
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
 rule-providers:
   refilter_noech:
     type: http
@@ -194,6 +234,16 @@ proxy:ipcidr:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/re-filt
   <summary>.yaml example for binary rule-set .mrs</summary>
   
 ```yaml
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
 rule-providers:
   torrent-trackers:
     type: http
@@ -249,6 +299,16 @@ DIRECT:classical:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/oth
   <summary>.yaml example for binary rule-set .mrs</summary>
   
 ```yaml
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
 rule-providers:
   antifilter-community:
     type: http
