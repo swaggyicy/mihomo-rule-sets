@@ -59,3 +59,33 @@ payload:
   - PROCESS-NAME,rtorrent
   - PROCESS-NAME,tribler
   - PROCESS-NAME,torrserver
+  - PROCESS-NAME,com.kevinforeman.nzb360
+  - PROCESS-NAME,org.proninyaroslav.libretorrent
+  - PROCESS-NAME,hu.tagsoft.ttorrent.noads
+  - PROCESS-NAME,com.utorrent.client
+  - PROCESS-NAME,hu.tagsoft.ttorrent.lite
+  - PROCESS-NAME,com.utorrent.client.pro
+  - PROCESS-NAME,com.mtorrent.client
+  - PROCESS-NAME,com.bittorrent.client.pro
+  - PROCESS-NAME,com.gray.pikatorrent
+  - PROCESS-NAME,com.yablio.torrentium
+  - PROCESS-NAME,in.gopalakrishnareddy.torrent
+  - PROCESS-NAME,intelligems.torrdroid
+  - PROCESS-NAME,org.jsp.wide
+  - PROCESS-NAME,mobi.zona
+  - PROCESS-NAME,com.bittorrent.client
+  - PROCESS-NAME,com.dv.adm
+  - PROCESS-NAME,org.freedownloadmanager.fdm
+  - PROCESS-NAME,com.houseoflife.bitlord
+  - PROCESS-NAME,connect.torrentpower
+  - PROCESS-NAME,com.amnis
+  - PROCESS-NAME,com.biglybt.android.client
+  - PROCESS-NAME,com.delphicoder.flud
+  - PROCESS-NAME,com.mediaget.android
+  - PROCESS-NAME,com.delphicoder.flud.paid
+  - PROCESS-NAME,org.transdroid.lite
+  - PROCESS-NAME,idm.internet.download.manager
+  - PROCESS-NAME,com.bitcomet.android
+  - PROCESS-NAME,org.equeim.tremotesf
+  - PROCESS-NAME,ru.yourok.torrserve
+  - PROCESS-NAME,com.gianlu.aria2app
