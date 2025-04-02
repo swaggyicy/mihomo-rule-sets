@@ -1511,20 +1511,6 @@
       },
       {
         "ip": [
-          "geoip:private"
-        ],
-        "outboundTag": "direct",
-        "type": "field"
-      },
-      {
-        "domain": [
-          "geosite:private"
-        ],
-        "outboundTag": "direct",
-        "type": "field"
-      },
-      {
-        "ip": [
           "1.1.1.1",
           "1.0.0.1"
         ],
