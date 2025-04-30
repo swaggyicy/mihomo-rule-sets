@@ -58,6 +58,8 @@ dns:
   nameserver:
   - https://cloudflare-dns.com/dns-query#PROXY
 
+proxies: # LEAVE THIS LINE!
+
 proxy-groups:
 - name: 'PROXY'
   type: 'select'
