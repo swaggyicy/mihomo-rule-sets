@@ -1,6 +1,7 @@
 {
   "dns": {
     "hosts": {
+      "geosite:category-ads-all": "127.0.0.1",
       "domain:googleapis.cn": "googleapis.com",
       "one.one.one.one": [
         "1.1.1.1",
@@ -1514,6 +1515,13 @@
         "network": "udp",
         "outboundTag": "block",
         "port": "443",
+        "type": "field"
+      },
+      {
+        "domain": [
+          "geosite:category-ads-all"
+        ],
+        "outboundTag": "block",
         "type": "field"
       },
       {
