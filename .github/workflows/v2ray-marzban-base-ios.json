@@ -1,0 +1,123 @@
+{
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com",
+        "one.one.one.one": [
+          "1.1.1.1",
+          "1.0.0.1",
+          "2606:4700:4700::1111",
+          "2606:4700:4700::1001"
+        ]
+      },
+      "servers": [
+        "77.88.8.8",
+        {
+          "address": "1.1.1.1",
+          "domains": [
+            "domain:googleapis.cn",
+            "domain:gstatic.com",
+            "domain:cloudflare-dns.com",
+            "domain:cloudflare-ech.com",
+            "domain:one.one.one.one"
+          ]
+        }
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIP"
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53",
+          "type": "field"
+        },
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:gstatic.com"
+          ],
+          "outboundTag": "proxy",
+          "type": "field"
+        },
+        {
+          "network": "udp",
+          "outboundTag": "block",
+          "port": "443",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "1.1.1.1",
+            "1.0.0.1"
+          ],
+          "outboundTag": "proxy",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:cloudflare-ech.com",
+            "domain:cloudflare-dns.com",
+            "domain:one.one.one.one"
+          ],
+          "outboundTag": "proxy",
+          "type": "field"
+        },
+        {
+          "outboundTag": "direct",
+          "port": "0-65535",
+          "type": "field"
+        }
+      ]
+    }
+  }
