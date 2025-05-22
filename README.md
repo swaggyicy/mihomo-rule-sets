@@ -3,10 +3,10 @@
 ## ru-bundle
 include: [itdoginfo-inside-russia](https://github.com/itdoginfo/allow-domains/) + [no-russia-hosts](https://github.com/dartraiden/no-russia-hosts) + [antifilter-community](https://community.antifilter.download/)
 <details>
-  <summary>how to add</summary>
+  <summary>how to add ↓ </summary>
   
 <details>
-  <summary>.yaml example for binary rule-set .mrs</summary>
+  <summary>.yaml example for binary rule-set .mrs ↓ </summary>
   
 ```yaml
 sniffer:
@@ -34,7 +34,7 @@ rules:
 
 </details>
 <details>
-  <summary>add to vpnbot</summary>
+  <summary>add to vpnbot ↓ </summary>
   
 ```shell
 proxy:domain:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/ru-bundle/rule.mrs
@@ -46,10 +46,10 @@ proxy:domain:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/ru-bund
 ## oisd (adblocklists + nsfw)
 include all list from [oisd](oisd.nl)
 <details>
-  <summary>how to add</summary>
+  <summary>how to add ↓ </summary>
   
 <details>
-  <summary>.yaml example for binary rule-set .mrs</summary>
+  <summary>.yaml example for binary rule-set .mrs ↓ </summary>
   
 ```yaml
 sniffer:
@@ -101,7 +101,7 @@ rules:
 
 </details>
 <details>
-  <summary>add to vpnbot</summary>
+  <summary>add to vpnbot ↓ </summary>
   
 **BIG LIST:**
 
@@ -130,10 +130,10 @@ reject:domain:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/oisd/n
 ## re-filter
 include domain & ip list from [re-filter](https://github.com/1andrevich/Re-filter-lists) & [ech+no-ech list by Akiyamov](https://github.com/Akiyamov/singbox-ech-list) based on re-filter
 <details>
-  <summary>how to add</summary>
+  <summary>how to add ↓ </summary>
   
 <details>
-  <summary>.yaml example for binary rule-set .mrs</summary>
+  <summary>.yaml example for binary rule-set .mrs ↓ </summary>
   
 ```yaml
 sniffer:
@@ -169,7 +169,7 @@ rules:
 
 </details>
 <details>
-  <summary>.yaml example with ECH+noECH rules</summary>
+  <summary>.yaml example with ECH+noECH rules ↓ </summary>
   
 ```yaml
 sniffer:
@@ -214,7 +214,7 @@ rules:
 
 </details>
 <details>
-  <summary>add to vpnbot</summary>
+  <summary>add to vpnbot ↓ </summary>
   
 ```shell
 proxy:domain:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/re-filter/domain-rule.mrs
@@ -228,10 +228,10 @@ proxy:ipcidr:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/re-filt
 
 ## other rule-sets
 <details>
-  <summary>torrent clients, trackers, websites</summary>
+  <summary>torrent clients, trackers, websites ↓ </summary>
   
 <details>
-  <summary>.yaml example for binary rule-set .mrs</summary>
+  <summary>.yaml example for binary rule-set .mrs ↓ </summary>
   
 ```yaml
 sniffer:
@@ -275,7 +275,7 @@ rules:
 
 </details>
 <details>
-  <summary>add to vpnbot</summary>
+  <summary>add to vpnbot ↓ </summary>
   
 ```shell
 DIRECT:domain:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/other/torrent-trackers.mrs
@@ -293,10 +293,10 @@ DIRECT:classical:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/oth
 </details>
 
 <details>
-  <summary>lists from ru-bundle (itdoginfo-inside-russia, no-russia-hosts, antifilter-community)</summary>
+  <summary>lists from ru-bundle (itdoginfo-inside-russia, no-russia-hosts, antifilter-community) ↓ </summary>
   
 <details>
-  <summary>.yaml example for binary rule-set .mrs</summary>
+  <summary>.yaml example for binary rule-set .mrs ↓ </summary>
   
 ```yaml
 sniffer:
@@ -340,7 +340,7 @@ rules:
 
 </details>
 <details>
-  <summary>add to vpnbot</summary>
+  <summary>add to vpnbot ↓ </summary>
   
 itdoginfo-inside-russia:
   
@@ -363,10 +363,10 @@ proxy:domain:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/ru-bund
 </details>
 </details>
 <details>
-  <summary>discord-voice-ips</summary>
+  <summary>discord-voice-ips ↓ </summary>
   
 <details>
-  <summary>.yaml example for binary rule-set .mrs</summary>
+  <summary>.yaml example for binary rule-set .mrs ↓ </summary>
   
 ```yaml
 rule-providers:
@@ -384,7 +384,7 @@ rules:
 
 </details>
 <details>
-  <summary>add to vpnbot</summary>
+  <summary>add to vpnbot ↓ </summary>
   
 ```shell
 proxy:ipcidr:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/other/discord-voice-ip-list.mrs
