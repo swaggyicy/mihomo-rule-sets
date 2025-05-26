@@ -62,14 +62,15 @@ jobs:
          wget -O re-filter-ip.text https://github.com/1andrevich/Re-filter-lists/raw/main/ipsum.lst
          mihomo convert-ruleset ipcidr text re-filter-ip.text ip-rule.mrs
          wget -O re-filter-domain.text https://github.com/1andrevich/Re-filter-lists/raw/main/domains_all.lst
-         mihomo convert-ruleset domain text re-filter-domain.text domain-rule.mrs
+         echo "payload:" > domain-rule.yaml && cat re-filter-domain.text | sed "s/.*/- '+.&'/" >> domain-rule.yaml
+         mihomo convert-ruleset domain yaml domain-rule.yaml domain-rule.mrs
          wget -O re-filter-noech.lst https://github.com/Akiyamov/singbox-ech-list/releases/latest/download/domains_noech.lst
          wget -O re-filter-ech.lst https://github.com/Akiyamov/singbox-ech-list/releases/latest/download/domains_ech.lst
          echo "payload:" > re-filter-noech.yaml && cat re-filter-noech.lst | sed "s/.*/- '+.&'/" >> re-filter-noech.yaml
          mihomo convert-ruleset domain yaml re-filter-noech.yaml re-filter-noech.mrs
          echo "payload:" > re-filter-ech.yaml && cat re-filter-ech.lst | sed "s/.*/- '+.&'/" >> re-filter-ech.yaml
          mihomo convert-ruleset domain yaml re-filter-ech.yaml re-filter-ech.mrs
-         mv domain-rule.mrs ip-rule.mrs re-filter-ech.yaml re-filter-ech.mrs re-filter-noech.yaml re-filter-noech.mrs re-filter/
+         mv domain-rule.yaml domain-rule.mrs ip-rule.mrs re-filter-ech.yaml re-filter-ech.mrs re-filter-noech.yaml re-filter-noech.mrs re-filter/
 
       - name: Generate oisd
         env:
