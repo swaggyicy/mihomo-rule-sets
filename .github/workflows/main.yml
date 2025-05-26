@@ -25,7 +25,7 @@ jobs:
          
       - name: Download and install Mihomo
         run: |
-          wget -q -O mihomo-linux-amd64-v1.19.9.deb https://github.com/MetaCubeX/mihomo/releases/download/v1.19.9/mihomo-linux-amd64-v1.19.9.deb
+          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/MetaCubeX/mihomo/releases/download/v1.19.9/mihomo-linux-amd64-v1.19.9.deb -o mihomo-linux-amd64-v1.19.9.deb
           sudo apt install --fix-missing ./mihomo-linux-amd64-v1.19.9.deb
         
       - name: Generate ru-bundle
@@ -33,10 +33,10 @@ jobs:
           NO_SKIP: true
         run: |
          mkdir -p ru-bundle
-         wget -O ru-bundle.lst https://github.com/legiz-ru/sb-rule-sets/raw/main/ru-bundle.lst
-         wget -O itdoginfo-inside-russia.lst https://github.com/itdoginfo/allow-domains/raw/main/Russia/inside-raw.lst
-         wget -O antifilter-community.lst https://community.antifilter.download/list/domains.lst
-         wget -O no-russia-hosts.json https://github.com/legiz-ru/sb-rule-sets/raw/main/no-russia-hosts.json
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/legiz-ru/sb-rule-sets/raw/main/ru-bundle.lst -o ru-bundle.lst
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/itdoginfo/allow-domains/raw/main/Russia/inside-raw.lst -o itdoginfo-inside-russia.lst
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://community.antifilter.download/list/domains.lst -o antifilter-community.lst
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/legiz-ru/sb-rule-sets/raw/main/no-russia-hosts.json -o no-russia-hosts.json
          jq -r '.rules[].domain_suffix[]' no-russia-hosts.json > no-russia-hosts.lst
          echo "payload:" > rule.yaml && cat ru-bundle.lst | sed "s/.*/- '+.&'/" >> rule.yaml
          mihomo convert-ruleset domain yaml rule.yaml rule.mrs
@@ -48,67 +48,62 @@ jobs:
          echo "payload:" > no-russia-hosts.yaml && cat no-russia-hosts.lst | sed "s/.*/- '+.&'/" >> no-russia-hosts.yaml
          mihomo convert-ruleset domain yaml no-russia-hosts.yaml no-russia-hosts.mrs
          mv rule.yaml rule.mrs rule.list itdoginfo-inside-russia.yaml itdoginfo-inside-russia.mrs antifilter-community.yaml antifilter-community.mrs no-russia-hosts.yaml no-russia-hosts.mrs ru-bundle/
-
       - name: Generate re-filter
         env:
           NO_SKIP: true
         run: |
          mkdir -p re-filter
-         wget -O re-filter-ip.text https://github.com/1andrevich/Re-filter-lists/raw/main/ipsum.lst
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/1andrevich/Re-filter-lists/raw/main/ipsum.lst -o re-filter-ip.text
          mihomo convert-ruleset ipcidr text re-filter-ip.text ip-rule.mrs
-         wget -O re-filter-domain.text https://github.com/1andrevich/Re-filter-lists/raw/main/domains_all.lst
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/1andrevich/Re-filter-lists/raw/main/domains_all.lst -o re-filter-domain.text
          echo "payload:" > domain-rule.yaml && cat re-filter-domain.text | sed "s/.*/- '+.&'/" >> domain-rule.yaml
          mihomo convert-ruleset domain yaml domain-rule.yaml domain-rule.mrs
-         wget -O re-filter-noech.lst https://github.com/Akiyamov/singbox-ech-list/releases/latest/download/domains_noech.lst
-         wget -O re-filter-ech.lst https://github.com/Akiyamov/singbox-ech-list/releases/latest/download/domains_ech.lst
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/Akiyamov/singbox-ech-list/releases/latest/download/domains_noech.lst -o re-filter-noech.lst
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/Akiyamov/singbox-ech-list/releases/latest/download/domains_ech.lst -o re-filter-ech.lst
          echo "payload:" > re-filter-noech.yaml && cat re-filter-noech.lst | sed "s/.*/- '+.&'/" >> re-filter-noech.yaml
          mihomo convert-ruleset domain yaml re-filter-noech.yaml re-filter-noech.mrs
          echo "payload:" > re-filter-ech.yaml && cat re-filter-ech.lst | sed "s/.*/- '+.&'/" >> re-filter-ech.yaml
          mihomo convert-ruleset domain yaml re-filter-ech.yaml re-filter-ech.mrs
          mv domain-rule.yaml domain-rule.mrs ip-rule.mrs re-filter-ech.yaml re-filter-ech.mrs re-filter-noech.yaml re-filter-noech.mrs re-filter/
-
       - name: Generate oisd
         env:
           NO_SKIP: true
         run: |
          mkdir -p oisd
-         wget -O oisd_big.txt https://github.com/sjhgvr/oisd/raw/main/domainswild2_big.txt
-         wget -O oisd_nsfw.txt https://github.com/sjhgvr/oisd/raw/main/domainswild2_nsfw.txt
-         wget -O oisd_nsfw_small.txt https://github.com/sjhgvr/oisd/raw/main/domainswild2_nsfw_small.txt
-         wget -O oisd_small.txt https://github.com/sjhgvr/oisd/raw/main/domainswild2_small.txt
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/sjhgvr/oisd/raw/main/domainswild2_big.txt -o oisd_big.txt
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/sjhgvr/oisd/raw/main/domainswild2_nsfw.txt -o oisd_nsfw.txt
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/sjhgvr/oisd/raw/main/domainswild2_nsfw_small.txt -o oisd_nsfw_small.txt
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/sjhgvr/oisd/raw/main/domainswild2_small.txt -o oisd_small.txt
          mihomo convert-ruleset domain text oisd_big.txt big.mrs
          mihomo convert-ruleset domain text oisd_nsfw.txt nsfw.mrs
          mihomo convert-ruleset domain text oisd_nsfw_small.txt nsfw_small.mrs
          mihomo convert-ruleset domain text oisd_small.txt small.mrs
          mv big.mrs nsfw.mrs nsfw_small.mrs small.mrs oisd/
-
       - name: Generate other rulesets
         env:
           NO_SKIP: true
         run: |
          mkdir -p other
-         wget -O discord-voice-ip-list.text https://github.com/GhostRooter0953/discord-voice-ips/raw/master/voice_domains/discord-voice-ip-list
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/GhostRooter0953/discord-voice-ips/raw/master/voice_domains/discord-voice-ip-list -o discord-voice-ip-list.text
          sed -i 's/$/\/32/' discord-voice-ip-list.text
          mihomo convert-ruleset ipcidr text discord-voice-ip-list.text discord-voice-ip-list.mrs
-         wget -O torrent-websites.txt https://github.com/sakib-m/Pi-hole-Torrent-Blocklist/raw/main/all-torrent-websites.txt
-         wget -O torrent-trackers.txt https://github.com/sakib-m/Pi-hole-Torrent-Blocklist/raw/main/all-torrent-trackres.txt
-         wget -O torrent-clients.json https://github.com/legiz-ru/sb-rule-sets/raw/main/torrent-clients.json
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/sakib-m/Pi-hole-Torrent-Blocklist/raw/main/all-torrent-websites.txt -o torrent-websites.txt
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/sakib-m/Pi-hole-Torrent-Blocklist/raw/main/all-torrent-trackres.txt -o torrent-trackers.txt
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/legiz-ru/sb-rule-sets/raw/main/torrent-clients.json -o torrent-clients.json
          mihomo convert-ruleset domain text torrent-websites.txt torrent-websites.mrs
          mihomo convert-ruleset domain text torrent-trackers.txt torrent-trackers.mrs
          echo "payload:" > torrent-clients.yaml && \
          jq -r '.rules[] | .rules[] | select(.process_name != null) | .process_name[] | "  - PROCESS-NAME," + .' torrent-clients.json >> torrent-clients.yaml && \
          jq -r '.rules[] | .rules[] | select(.package_name != null) | .package_name[] | "  - PROCESS-NAME," + .' torrent-clients.json >> torrent-clients.yaml
          mv torrent-websites.mrs torrent-trackers.mrs torrent-clients.yaml discord-voice-ip-list.mrs other/
-
       - name: Generate v2ray templates for vpnbot
         env:
           NO_SKIP: true
         run: |
          mkdir -p other
-         wget -O other/vpnbot-v2ray-ru-bundle.json https://github.com/mercurykd/vpnbot/raw/dev/config/v2ray.json
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/mercurykd/vpnbot/raw/dev/config/v2ray.json -o other/vpnbot-v2ray-ru-bundle.json
          domains=$(cat ru-bundle.lst | jq -R . | jq -s .) && jq --argjson domains "$domains" '(.routing.rules | to_entries | .[] | select(.value.outboundTag == "block").key + 1) as $idx | .routing.rules = .routing.rules[0:$idx] + [{"type": "field", "outboundTag": "~outbound~", "domain": $domains}] + .routing.rules[$idx:]' other/vpnbot-v2ray-ru-bundle.json > temp.json && mv temp.json other/vpnbot-v2ray-ru-bundle.json
          jq '.routing.rules as $rules | ($rules | to_entries | map(select(.value.outboundTag == "block" and .value.domain == "~block~")) | .[0].key + 1) as $idx | .routing.rules = $rules[0:$idx] + [{"type": "field", "outboundTag": "block", "domain": ["geosite:category-ads-all"]}] + $rules[$idx:]' other/vpnbot-v2ray-ru-bundle.json > other/vpnbot-v2ray-ru-bundle-category-ads-all.json
-
       - name: Generate v2ray templates for marzban
         env:
           NO_SKIP: true
@@ -117,7 +112,6 @@ jobs:
          domains=$(jq -R -s 'split("\n") | map(select(length > 0))' ru-bundle.lst) && jq --argjson added "$domains" '(.dns.servers[1].domains |= (if type=="string" then [.] else . end)) | (.dns.servers[1].domains += $added) | (.routing.rules |= map(if .domain then .domain |= (if type=="string" then [.] else . end) else . end)) | (.routing.rules |= map(if (.domain == ["domain:cloudflare-ech.com", "domain:cloudflare-dns.com", "domain:one.one.one.one"]) then .domain += $added else . end))' other/marzban-v2ray-ru-bundle-category-ads-all.json > temp.json && mv temp.json other/marzban-v2ray-ru-bundle-category-ads-all.json
          cp .github/workflows/v2ray-marzban-base-ios.json other/marzban-v2ray-ru-bundle.json
          domains=$(jq -R -s 'split("\n") | map(select(length > 0))' ru-bundle.lst) && jq --argjson added "$domains" '(.dns.servers[1].domains |= (if type=="string" then [.] else . end)) | (.dns.servers[1].domains += $added) | (.routing.rules |= map(if .domain then .domain |= (if type=="string" then [.] else . end) else . end)) | (.routing.rules |= map(if (.domain == ["domain:cloudflare-ech.com", "domain:cloudflare-dns.com", "domain:one.one.one.one"]) then .domain += $added else . end))' other/marzban-v2ray-ru-bundle.json > temp.json && mv temp.json other/marzban-v2ray-ru-bundle.json
-
       - name: Delete temp file
         run: |
           rm ru-bundle.lst | rm re-filter-ip.text | rm re-filter-domain.text |  rm re-filter-ech.lst | rm re-filter-noech.lst
@@ -131,14 +125,9 @@ jobs:
           echo "DATE=$(TZ=Europe/Moscow date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
       
       - name: Commit and Push Changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: GitHub Action
-          author_email: githubaction@githubaction.com
-          message: 'Generating .mrs rule-sets ${{ env.DATE }}'
-          push: true
-          cwd: .
-          default_author: github_actor
-          fetch: --tags --force
-          pathspec_error_handling: ignore
-          github_token: ${{ secrets.RULESET_TOKEN }}
+        run: |
+          git config --local user.email "legiz-ru@users.noreply.github.com"
+          git config --local user.name "legiz-ru"
+          git add .
+          git commit -m "Generating .mrs rule-sets ${{ env.DATE }}" -a || echo "No changes to commit"
+          git push
