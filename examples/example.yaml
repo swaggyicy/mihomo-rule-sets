@@ -59,6 +59,7 @@ proxies:
     uuid: YOURUUID
     network: tcp
     flow: xtls-rprx-vision
+    udp: true
     tls: true
     reality-opts:
       public-key: YOURPUBLIC
