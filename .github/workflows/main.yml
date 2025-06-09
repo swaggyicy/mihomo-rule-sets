@@ -74,6 +74,10 @@ jobs:
          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/sjhgvr/oisd/raw/main/domainswild2_nsfw.txt -o oisd_nsfw.txt
          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/sjhgvr/oisd/raw/main/domainswild2_nsfw_small.txt -o oisd_nsfw_small.txt
          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -L https://github.com/sjhgvr/oisd/raw/main/domainswild2_small.txt -o oisd_small.txt
+         grep -v '^\s*$' oisd_big.txt | grep -v '^#' > tmp && mv tmp oisd_big.txt
+         grep -v '^\s*$' oisd_nsfw.txt | grep -v '^#' > tmp && mv tmp oisd_nsfw.txt
+         grep -v '^\s*$' oisd_nsfw_small.txt | grep -v '^#' > tmp && mv tmp oisd_nsfw_small.txt
+         grep -v '^\s*$' oisd_small.txt | grep -v '^#' > tmp && mv tmp oisd_small.txt
          echo "payload:" > big.yaml && cat oisd_big.txt | sed "s/.*/- '+.&'/" >> big.yaml
          echo "payload:" > nsfw.yaml && cat oisd_nsfw.txt | sed "s/.*/- '+.&'/" >> nsfw.yaml
          echo "payload:" > nsfw_small.yaml && cat oisd_nsfw_small.txt | sed "s/.*/- '+.&'/" >> nsfw_small.yaml
