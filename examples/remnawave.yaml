@@ -71,13 +71,13 @@ proxy-groups:
 - name: '⚡️ Fastest'
   type: 'url-test'
   tolerance: 150
-  url: 'https://www.gstatic.com/generate_204'
+  url: 'https://cp.cloudflare.com/generate_204'
   interval: 300
   proxies: # LEAVE THIS LINE!
 
 - name: '📶 First Available'
   type: 'fallback'
-  url: 'https://www.gstatic.com/generate_204'
+  url: 'https://cp.cloudflare.com/generate_204'
   interval: 300
   proxies: # LEAVE THIS LINE!
   
