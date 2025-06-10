@@ -109,6 +109,7 @@ rule-providers:
     path: ./oisd/nsfw_big.mrs
     interval: 86400
 rules:
+  - OR,((DOMAIN,ipwhois.app),(DOMAIN,ipwho.is),(DOMAIN,api.ip.sb),(DOMAIN,ipapi.co),(DOMAIN,ipinfo.io)),🌍 VPN # IP Checker FlClash and Pandora-Box
   # - RULE-SET,oisd_small,REJECT
   # - RULE-SET,oisd_big,REJECT
   # - RULE-SET,oisd_nsfw_small,REJECT

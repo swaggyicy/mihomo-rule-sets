@@ -125,6 +125,7 @@ rule-providers:
     path: ./re-filter/ip-rule.mrs
     interval: 86400
 rules: # ВСЕ ПРАВИЛА ЗАКОМЕНТИРОВАНЫ ВАМ ТРЕБУЕТСЯ ВЫБРАТЬ НУЖНОЕ
+  #- OR,((DOMAIN,ipwhois.app),(DOMAIN,ipwho.is),(DOMAIN,api.ip.sb),(DOMAIN,ipapi.co),(DOMAIN,ipinfo.io)),🌍 VPN # IP Checker FlClash and Pandora-Box
   #- RULE-SET,torrent-clients,DIRECT
   #- RULE-SET,torrent-trackers,DIRECT
   #- PROCESS-NAME,Discord.exe,PROXY #Windows Discord App
