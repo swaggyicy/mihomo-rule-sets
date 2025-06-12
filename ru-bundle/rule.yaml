@@ -1424,6 +1424,7 @@ payload:
 - '+.youtubei.googleapis.com'
 - '+.youtubekids.com'
 - '+.yt-video-upload.l.google.com'
+- '+.yt3.googleusercontent.com'
 - '+.ytimg.com'
 - '+.ytimg.l.google.com'
 - '+.yting.com'
