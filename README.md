@@ -396,10 +396,6 @@ proxy:ipcidr:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/other/d
 # another mihomo rulesets
 - [mihomo rule-sets](https://github.com/MetaCubeX/meta-rules-dat/tree/meta) by MetaCubeX include: asn/geoip/geosite
 
-# sponsor
-
-[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
-
 ## Stargazers over time
 [![Stargazers over time](https://starchart.cc/legiz-ru/mihomo-rule-sets.svg?variant=adaptive)](https://starchart.cc/legiz-ru/mihomo-rule-sets)
 
