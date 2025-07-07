@@ -1,8 +1,8 @@
 name: Generate mihomo 
 
 on:
-  schedule:
-    - cron: "30 1 * * *" 
+  repository_dispatch:
+    types: [trigger-from-sb-rule-sets]
   workflow_dispatch:
   
 permissions:
