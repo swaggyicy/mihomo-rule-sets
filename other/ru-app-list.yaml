@@ -6,6 +6,17 @@ payload:
  - PROCESS-NAME,com.bifit.rncbbeta
  - PROCESS-NAME,com.carshering
  - PROCESS-NAME,com.citymobil
+ - PROCESS-NAME,com.taxsee.taxsee
+ - PROCESS-NAME,ru.yandex.uber
+ - PROCESS-NAME,ru.taxovichkof.android
+ - PROCESS-NAME,ru.rolf.rolf
+ - PROCESS-NAME,ru.russianhighways.mobile
+ - PROCESS-NAME,ru.mosparking.appnew
+ - PROCESS-NAME,centrida.neftmagistral
+ - PROCESS-NAME,ru.pichesky.rosneft
+ - PROCESS-NAME,ru.serebryakovas.lukoilmobileapp
+ - PROCESS-NAME,ru.tatneft.gasstations
+ - PROCESS-NAME,com.gpn.azs
  - PROCESS-NAME,com.coolclever.app
  - PROCESS-NAME,com.deliveryclub
  - PROCESS-NAME,com.discover.moscow.lite
@@ -73,6 +84,8 @@ payload:
  - PROCESS-NAME,ru.domclick.mortgage
  - PROCESS-NAME,ru.drclinics.app.sovcom
  - PROCESS-NAME,ru.dublgis.dgismobile
+ - PROCESS-NAME,ru.dublgis.dgismobile4preview
+ - PROCESS-NAME,otello.dgis.ru
  - PROCESS-NAME,ru.fanid
  - PROCESS-NAME,ru.filit.mvideo.b2c
  - PROCESS-NAME,ru.finassist
@@ -133,6 +146,11 @@ payload:
  - PROCESS-NAME,ru.rambler.mail
  - PROCESS-NAME,ru.rostel
  - PROCESS-NAME,ru.rutube.app
+ - PROCESS-NAME,ru.rutube.RutubeKids
+ - PROCESS-NAME,ru.rutube.studio
+ - PROCESS-NAME,ru.rutube.app.tv
+ - PROCESS-NAME,gpm.tnt_premier
+ - PROCESS-NAME,one.premier.rustoretv
  - PROCESS-NAME,ru.rzd.pass
  - PROCESS-NAME,ru.salute.b2b.prod
  - PROCESS-NAME,ru.sbcs.store
@@ -166,7 +184,16 @@ payload:
  - PROCESS-NAME,ru.urentbike.app
  - PROCESS-NAME,ru.vk.store
  - PROCESS-NAME,ru.vkusvill
+ - PROCESS-NAME,ru.detmir.dmbonus
+ - PROCESS-NAME,ru.lenta.lentochka
+ - PROCESS-NAME,goldapple.ru.goldapple.customers
+ - PROCESS-NAME,com.notissimus.allinstruments.android
  - PROCESS-NAME,ru.vseapteki
+ - PROCESS-NAME,ru.leonardo.leonardoshop
+ - PROCESS-NAME,ru.leroymerlin.mobile
+ - PROCESS-NAME,ru.maxidom.ecomm
+ - PROCESS-NAME,air.ru.obi.mobile
+ - PROCESS-NAME,com.logistic.sdek
  - PROCESS-NAME,ru.vtb24.mobilebanking.android
  - PROCESS-NAME,ru.yandex.androidkeyboard
  - PROCESS-NAME,ru.yandex.disk
@@ -197,6 +224,8 @@ payload:
  - PROCESS-NAME,team.rtds.checkcontrol
  - PROCESS-NAME,tv.lfstrm.smotreshka
  - PROCESS-NAME,com.apteka.sklad
+ - PROCESS-NAME,com.platfomni.gorzdrav
+ - PROCESS-NAME,com.invitro.app
  - PROCESS-NAME,youdrive.today
  - PROCESS-NAME,com.kms.free
  - PROCESS-NAME,ru.paribet
@@ -209,3 +238,5 @@ payload:
  - PROCESS-NAME,com.national.lottery
  - PROCESS-NAME,ru.stoloto.mobile
  - PROCESS-NAME,ru.bkfon
+ - PROCESS-NAME,ru.cian.main
+ - PROCESS-NAME,ru.m2.squaremeter
