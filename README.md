@@ -362,6 +362,69 @@ proxy:domain:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/ru-bund
 
 </details>
 </details>
+
+<details>
+  <summary>ru-app-list (Russian mobile apps) ↓ </summary>
+  
+<details>
+  <summary>.yaml example for classical rule-set ↓ </summary>
+  
+```yaml
+rule-providers:
+  ru-app-list:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://github.com/legiz-ru/mihomo-rule-sets/raw/main/other/ru-app-list.yaml
+    path: ./rule-sets/ru-app-list.yaml
+    interval: 86400
+rules:
+  - RULE-SET,ru-app-list,DIRECT
+  - MATCH,DIRECT
+```
+
+</details>
+<details>
+  <summary>add to vpnbot ↓ </summary>
+  
+```shell
+DIRECT:classical:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/other/ru-app-list.yaml
+```
+
+</details>
+</details>
+
+<details>
+  <summary>games-direct () ↓ </summary>
+  
+<details>
+  <summary>.yaml example for classical rule-set ↓ </summary>
+  
+```yaml
+rule-providers:
+  ru-app-list:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://github.com/legiz-ru/mihomo-rule-sets/raw/main/other/games-direct.yaml
+    path: ./rule-sets/games-direct.yaml
+    interval: 86400
+rules:
+  - RULE-SET,games-direct,DIRECT
+  - MATCH,DIRECT
+```
+
+</details>
+<details>
+  <summary>add to vpnbot ↓ </summary>
+  
+```shell
+DIRECT:classical:86400:https://github.com/legiz-ru/mihomo-rule-sets/raw/main/other/games-direct.yaml
+```
+
+</details>
+</details>
+
 <details>
   <summary>discord-voice-ips ↓ </summary>
   
