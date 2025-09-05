@@ -183,6 +183,42 @@ payload:
  - PROCESS-NAME,ru.troika.regional
  - PROCESS-NAME,ru.urentbike.app
  - PROCESS-NAME,ru.vk.store
+ - PROCESS-NAME,ru.vk.video
+ - PROCESS-NAME,ru.vkmusic.audio
+ - PROCESS-NAME,ru.tbank.online
+ - PROCESS-NAME,ru.amina.moscow
+ - PROCESS-NAME,ru.lewis.dbo
+ - PROCESS-NAME,ru.gibdd_pay.app
+ - PROCESS-NAME,com.moex.finuslugi
+ - PROCESS-NAME,su.azure.paymaster
+ - PROCESS-NAME,ru.nspk.sbpay
+ - PROCESS-NAME,ru.gosuslugi.school
+ - PROCESS-NAME,ru.sigma.gisgkh
+ - PROCESS-NAME,ru.rshb.dbo
+ - PROCESS-NAME,ru.spb.iac.dnevnikspb_new
+ - PROCESS-NAME,ru.ues.users_personal_account
+ - PROCESS-NAME,com.leroymerlin.mobile
+ - PROCESS-NAME,ru.kari.android
+ - PROCESS-NAME,ru.sunlight.sunlight
+ - PROCESS-NAME,level.travel
+ - PROCESS-NAME,ru.abrr.gas
+ - PROCESS-NAME,com.maxxt.recordradio
+ - PROCESS-NAME,com.uchi.app
+ - PROCESS-NAME,ru.chitaigorod.mobile
+ - PROCESS-NAME,ru.usetech.velobike.v2
+ - PROCESS-NAME,ru.zolotoy585.customer
+ - PROCESS-NAME,com.onecwearable.keyboard.rustore
+ - PROCESS-NAME,com.gloriajeans.mobile
+ - PROCESS-NAME,ru.rabota.app2
+ - PROCESS-NAME,ru.domopult.mosobleirc.android
+ - PROCESS-NAME,ru.rgs.lk
+ - PROCESS-NAME,ru.dikidi
+ - PROCESS-NAME,ru.citilink
+ - PROCESS-NAME,ru.spb.dnevnik
+ - PROCESS-NAME,ru.sima_land.spb.market
+ - PROCESS-NAME,ru.ufanet.myufanet
+ - PROCESS-NAME,ru.bcs.bcsbank
+ - PROCESS-NAME,com.svoi.bank
  - PROCESS-NAME,ru.vkusvill
  - PROCESS-NAME,ru.detmir.dmbonus
  - PROCESS-NAME,ru.lenta.lentochka
