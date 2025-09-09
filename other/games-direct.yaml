@@ -75,6 +75,13 @@ payload:
   # Valorant
   - PROCESS-NAME,VALORANT-Win64-Shipping.exe # Valorant
 
+  # Helldivers 2
+  - PROCESS-NAME,helldivers2.exe # Helldivers 2
+  - PROCESS-NAME,crs-handler.exe # crash reports Helldivers 2
+
+  # The FINALS
+  - PROCESS-NAME,Discovery.exe # The FINALS
+  
   # Rust (не указан явно выше)
   - PROCESS-NAME-REGEX,(?i).*RustClient.* # Rust
 
@@ -85,3 +92,5 @@ payload:
   - PROCESS-NAME,TslGame_BE.exe # PUBG BattleEye
   - PROCESS-NAME,TslGame_ZK.exe # PUBG Anti-Cheat module
   - PROCESS-NAME-REGEX,(?i).*Vanguard.* # Valorant Vanguard Anti-Cheat
+  - PROCESS-NAME,start_protected_game.exe # The FINALS anticheat start exe
+
